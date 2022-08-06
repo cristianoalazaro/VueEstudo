@@ -49,7 +49,8 @@ export default {
 
     data() {
         return {
-            foto: new Foto()
+            foto: new Foto(),
+            id: this.$route.params.id
         }
     },
 
@@ -63,6 +64,12 @@ export default {
     created(){
         //this.resource = this.$resource('v1/fotos');
         this.FotoService = new FotoService(this.$resource);
+
+        if (this.id){
+            this.FotoService
+                .busca(this.id)
+                .then(foto => this.foto = foto);
+        }
     }
 }
 
