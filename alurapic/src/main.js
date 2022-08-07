@@ -8,6 +8,10 @@ import msg from './pt_BR';
 import {routes} from './routes';
 import './directives/Transform';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import './assets/css/teste.css';
+
 Vue.use(VueResource);
 Vue.http.options.root = 'http://localhost:3000';
 
