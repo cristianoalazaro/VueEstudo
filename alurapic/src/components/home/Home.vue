@@ -62,7 +62,7 @@ export default {
 
         this.service
             .lista()
-            .then(fotos => this.fotos = fotos, err => alert('Erro ao acessara api'));
+            .then(fotos => this.fotos = fotos, err => this.mensagem = err.message);
 
         /*this.$http.get('v1/fotos')
             .then(res => res.json())
@@ -76,10 +76,7 @@ export default {
                     let indice = this.fotos.indexOf(foto);
                     this.fotos.splice(indice, 1);
                     this.mensagem = 'Foto removida com sucesso!';
-                }, err => {
-                    console.log(err);
-                    this.mensagem = 'Não foi possível remover a mensagem!';
-                });
+                }, err => this.mensagem = err.message);
         }
     }
 }
